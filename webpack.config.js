@@ -25,6 +25,14 @@ module.exports = {
         ],
         exclude: /node_modules/, // 외부 모듈은 제외
       },
+      {
+        test: /\.css$/, // .css 파일을 처리
+        use: [
+          // 로더는 배열의 뒤에서부터 앞으로 순서대로 실행. css-loader가 먼저 실행, 그 다음 style-loader가 실행
+          'style-loader', // CSS를 <style> 태그로 주입
+          'css-loader', // CSS를 JavaScript 모듈로 변환
+        ],
+      },
     ],
   },
   resolve: {
