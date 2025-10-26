@@ -33,6 +33,10 @@ module.exports = {
           'css-loader', // CSS를 JavaScript 모듈로 변환
         ],
       },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i, // 이미지 파일 확장자
+        type: 'asset', // Asset Modules 사용
+      },
     ],
   },
   resolve: {
